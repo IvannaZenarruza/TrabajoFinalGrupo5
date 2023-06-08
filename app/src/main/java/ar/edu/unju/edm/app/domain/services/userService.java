@@ -8,7 +8,8 @@ import ar.edu.unju.edm.app.domain.model.Point;
 import ar.edu.unju.edm.app.domain.model.User;
 
 @Service
-public interface userService {
+public interface UserService {
     public List <User> getListUsers ();
     public List <Point> getListPoints ();
 }
+
