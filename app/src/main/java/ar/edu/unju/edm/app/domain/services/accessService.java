@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface AccessService {
-    public void login (String email, String password);
+    public Integer login (String email, String password);
     public Integer register ();
 }
 
