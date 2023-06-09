@@ -3,6 +3,7 @@ package ar.edu.unju.edm.app.data.source;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.app.data.repository.AccessRepository;
+import ar.edu.unju.edm.app.domain.model.User;
 import ar.edu.unju.edm.app.domain.services.AccessService;
 @Service
 public class AccessDB implements AccessService{
@@ -11,9 +12,9 @@ public class AccessDB implements AccessService{
     this.Database=Database;
     }
     @Override
-    public void login(String email, String password) {
+    public Integer login(String email, String password) {
         // TODO Auto-generated method stub
-        
+        return null;
     }
 
     @Override
@@ -22,5 +23,13 @@ public class AccessDB implements AccessService{
 
         return null;
     }
-  
+    @Override
+    public void deleteUser(Integer ID) {
+       Database.deleteById(ID);
+        
+    }
+    @Override
+    public void modifyUser(User Turista) {
+        Database.save(Turista);
+    }
 }

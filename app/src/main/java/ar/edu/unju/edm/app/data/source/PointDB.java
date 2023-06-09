@@ -13,9 +13,8 @@ public class PointDB implements PointService {
     this.Database = Database;
    }
     @Override
-    public void addPoint() {
-        // TODO Auto-generated method stub
-        
+    public void addPoint(Point point) {
+        Database.save(point);
     }
 
     @Override
