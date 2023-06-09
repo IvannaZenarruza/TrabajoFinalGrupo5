@@ -6,7 +6,7 @@ import ar.edu.unju.edm.app.domain.model.Point;
 
 @Service
 public interface PointService {
-    public void addPoint();
+    public void addPoint(Point Punto);
     public void deletePoint (Integer ID);
     public void modifyPoint (Point item);
     public Point getPoint (Integer ID);
