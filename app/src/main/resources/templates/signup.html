@@ -20,10 +20,19 @@
                         <div class="input-wrap">
                             <label>Nombre</label>
                             <input class="input" th:field="*{name}" type="text" required>
+<<<<<<< Updated upstream
                         </div>
                         <div class="input-wrap">
                             <label>Apellido</label>
                             <input class="input" th:field="*{lastName}" type="text" required>    
+=======
+                            <div class="alert" th:if="${#fields.hasErrors('name')}" th:errors="*{'name'}"></div>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Apellido</label>
+                            <input class="input" th:field="*{lastName}" type="text" required>
+                            <div class="alert" th:if="${#fields.hasErrors('lastname')}" th:errors="*{'lastname'}"></div>    
+>>>>>>> Stashed changes
                         </div>
                         <div class="input-wrap w-100">
                             <label>Correo Electronico</label>
