@@ -1,11 +1,10 @@
 package ar.edu.unju.edm.app.domain.model;
 
+import ar.edu.unju.edm.app.domain.model.complements.Country;
+import com.sun.istack.NotNull;
 import org.springframework.stereotype.Component;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 
 @Component
 @Entity
@@ -14,75 +13,94 @@ public class Point {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
-    private String URL;
-    private String locate;
+    @Lob
+    @Column(name = "photo", columnDefinition = "MEDIUMBLOB")
+    private String photo;
+    @NotNull
     private String name;
     private String description;
+    @NotNull
+    private String locate;
+    @NotNull
     private String type;
-    private Float rating;
-    
-    public Point(Integer iD, String uRL, String locate, String name, String description, String type, Float rating,
-            Boolean state) {
-        ID = iD;
-        URL = uRL;
-        this.locate = locate;
+    private Float rating = 0.0f;
+    private Boolean state = true;
+
+    public Point() {}
+
+    public Point(Integer ID, String photo, String name, String description, String locate, String type, Float rating, Boolean state) {
+        this.ID = ID;
+        this.photo = photo;
         this.name = name;
         this.description = description;
+        this.locate = locate;
         this.type = type;
         this.rating = rating;
         this.state = state;
     }
-    private Boolean state;
-    public Point (){
-        
-    }
+
     public Integer getID() {
         return ID;
     }
-    public void setID(Integer iD) {
-        ID = iD;
+
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
-    public String getURL() {
-        return URL;
+
+    public String getPhoto() {
+        return photo;
     }
-    public void setURL(String uRL) {
-        URL = uRL;
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
-    public String getLocate() {
-        return locate;
-    }
-    public void setLocate(String locate) {
-        this.locate = locate;
-    }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getLocate() {
+        return locate;
+    }
+
+    public void setLocate(String locate) {
+        this.locate = locate;
+    }
+
     public String getType() {
         return type;
     }
+
     public void setType(String type) {
         this.type = type;
     }
+
     public Float getRating() {
         return rating;
     }
+
     public void setRating(Float rating) {
         this.rating = rating;
     }
+
     public Boolean getState() {
         return state;
     }
+
     public void setState(Boolean state) {
         this.state = state;
     }
-}
 
+}
