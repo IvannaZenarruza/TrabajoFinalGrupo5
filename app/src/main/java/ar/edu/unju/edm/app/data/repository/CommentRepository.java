@@ -3,11 +3,9 @@ package ar.edu.unju.edm.app.data.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import ar.edu.unju.edm.app.domain.model.User;
+import ar.edu.unju.edm.app.domain.model.Comment;
 
 @Repository
-public interface AccessRepository extends CrudRepository <User, Integer>{
+public interface CommentRepository extends CrudRepository<Comment, Integer> {
     
 }
-
-
