@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Review {
 
+}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
